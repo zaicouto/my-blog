@@ -20,6 +20,18 @@ importers:
       astro:
         specifier: ^5.6.1
         version: 5.7.5(rollup@4.40.0)(typescript@5.8.3)
+      remark-mdx:
+        specifier: ^3.1.0
+        version: 3.1.0
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
+      unified:
+        specifier: ^11.0.5
+        version: 11.0.5
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       prettier:
         specifier: ^3.5.3
