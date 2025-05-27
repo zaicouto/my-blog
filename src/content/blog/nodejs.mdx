@@ -1,0 +1,147 @@
+---
+title: "Node.js: o que é e como instalar no Linux e Windows (GUI e terminal)"
+description: "Descubra o que é o Node.js, por que ele é tão usado e veja como instalá-lo facilmente no Linux e no Windows — com ou sem terminal. Guia prático e direto ao ponto!"
+pubDate: "2025/05/26"
+heroImage: "/blog-placeholder-2.jpg"
+---
+
+import HeaderLink from "../../components/HeaderLink.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+
+<TableOfContents
+  links={[
+    { link: "#o-que-é-o-nodejs", descricao: "O que é o Node.js?" },
+    {
+      link: "#instalando-nodejs-no-linux",
+      descricao: "Instalando Node.js no Linux",
+    },
+    {
+      link: "#instalando-nodejs-no-windows",
+      descricao: "Instalando Node.js no Window",
+    },
+    { link: "#conclusão", descricao: "Conclusão" },
+    { link: "#links-úteis", descricao: "Links úteis" },
+  ]}
+/>
+
+## TL;DR
+
+- **Node.js** é um ambiente de execução JavaScript no lado do servidor.
+- Ele permite rodar JS fora do navegador, ótimo para back-end, APIs e automações.
+- A instalação é simples no **Linux** e no **Windows**, com opções via **interface gráfica (GUI)** ou **terminal (CLI)**.
+
+[Pule para Linux](#instalando-nodejs-no-linux) | [Pule para Windows](#instalando-nodejs-no-windows)
+
+---
+
+## O que é o Node.js? <HeaderLink href="#o-que-é-o-nodejs" />
+
+Node.js é um **ambiente de execução de JavaScript no lado do servidor**. Em vez de rodar JS apenas no navegador, como era tradicional, com o Node você pode usar JavaScript para criar **servidores, APIs, scripts de automação, bots, ferramentas de linha de comando e até back-ends completos**.
+
+O Node é construído sobre o mecanismo V8 do Google Chrome — o mesmo que interpreta JS no navegador. Isso garante alta performance e suporte a recursos modernos da linguagem.
+
+### Por que aprender Node.js?
+
+- Usado por gigantes como Netflix, PayPal, LinkedIn e Uber.
+- Ideal para quem já conhece JavaScript e quer entrar no mundo do back-end.
+- Enorme comunidade e milhares de bibliotecas via [npm](https://www.npmjs.com/).
+
+---
+
+## Instalando Node.js no Linux <HeaderLink href="#instalando-nodejs-no-linux" />
+
+Você pode instalar o Node.js no Linux de **duas formas principais**: via terminal (recomendado para quem tem familiaridade com o shell) ou com gerenciadores gráficos.
+
+### 💻 Opção 1: Terminal (CLI)
+
+#### Para Ubuntu, Debian e derivados:
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
+
+> Isso instalará o Node.js e o gerenciador de pacotes npm.
+
+Para verificar se tudo deu certo:
+
+```bash
+node -v
+npm -v
+```
+
+#### Usando o Node Version Manager (NVM)
+
+Para quem quer mais controle sobre versões:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Após instalação:
+nvm install --lts
+```
+
+Mais info: https://github.com/nvm-sh/nvm
+
+### 🖥️ Opção 2: Interface gráfica (GUI)
+
+Algumas distros, como o **Pop!\_OS** ou **Zorin OS**, têm app stores gráficas como o **Pop Shop** ou o **GNOME Software**. Basta procurar por "Node.js" e instalar com um clique.
+
+---
+
+## Instalando Node.js no Windows <HeaderLink href="#instalando-nodejs-no-windows" />
+
+### Opção 1: Instalador gráfico (GUI)
+
+1. Acesse o site oficial: https://nodejs.org
+2. Baixe a versão LTS (Long Term Support).
+3. Siga o passo a passo do instalador — é só avançar.
+
+Após a instalação, abra o Prompt de Comando e digite:
+
+```bash
+node -v
+npm -v
+```
+
+Se aparecerem as versões, está tudo certo!
+
+### 💻 Opção 2: Terminal (PowerShell ou WSL)
+
+Se você usa o **Windows Terminal**, **PowerShell** ou **WSL** (Windows Subsystem for Linux), pode instalar via `choco` ou `nvm-windows`.
+
+#### Via Chocolatey:
+
+```bash
+choco install nodejs-lts
+```
+
+Chocolatey precisa estar instalado. Veja https://chocolatey.org/install
+
+#### Via NVM para Windows:
+
+1. Baixe o instalador em: https://github.com/coreybutler/nvm-windows
+2. Instale o NVM.
+3. Depois, use:
+
+```bash
+nvm install lts
+nvm use lts
+```
+
+---
+
+## Conclusão <HeaderLink href="#conclusão" />
+
+O Node.js é uma ferramenta poderosa para quem quer ir além do front-end com JavaScript. Seja no Linux ou no Windows, a instalação é rápida — com ou sem terminal.
+
+Quer criar APIs, CLIs ou apps completos? Com o Node, você está no caminho certo.
+
+---
+
+## Links úteis <HeaderLink href="#links-úteis" />
+
+- [Site oficial do Node.js](https://nodejs.org/)
+- [Documentação do NPM](https://docs.npmjs.com/)
+- [Instalação com NVM no Linux](https://github.com/nvm-sh/nvm)
+- [NVM para Windows](https://github.com/coreybutler/nvm-windows)
+- [Chocolatey para Windows](https://chocolatey.org/)
