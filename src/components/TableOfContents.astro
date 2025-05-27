@@ -1,0 +1,59 @@
+---
+// Props: links (array de objetos com { link: string, descricao: string })
+export interface Props {
+  links: { link: string; descricao: string }[];
+}
+
+const { links } = Astro.props;
+---
+
+<nav class="toc">
+  <h2 class="toc-title">SUMÁRIO</h2>
+  <ul class="toc-list">
+    {
+      links.map((item, index) => (
+        <li class="toc-item">
+          <a href={item.link} class="toc-link">
+            {`${index + 1}. ${item.descricao}`}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    padding: 1rem;
+    border-left: 4px solid var(--accent);
+    background-color: #f9f9f9;
+    margin-bottom: 2rem;
+    /* border-radius: 0.5rem; */
+  }
+
+  .toc-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin-bottom: 0.25rem;
+  }
+
+  .toc-link {
+    text-decoration: none;
+    color: var(--gray-dark);
+  }
+
+  .toc-link:hover {
+    text-decoration: underline;
+    color: var(--accent);
+  }
+</style>
