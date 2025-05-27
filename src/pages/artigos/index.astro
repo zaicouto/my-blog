@@ -7,13 +7,12 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a: { data: { pubDate: number } }, b: { data: { pubDate: number } }) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
@@ -92,31 +91,22 @@ const posts = (await getCollection("blog")).sort(
       <section>
         <ul>
           {
-            posts.map(
-              (post: {
-                id: any;
-                data: {
-                  heroImage: string | null | undefined;
-                  title: unknown;
-                  pubDate: Date;
-                };
-              }) => (
-                <li>
-                  <a href={`/blog/${post.id}/`}>
-                    <img
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage}
-                      alt=""
-                    />
-                    <h4 class="title">{post.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </p>
-                  </a>
-                </li>
-              )
-            )
+            posts.map((post: any) => (
+              <li>
+                <a href={`/artigos/${post.id}/`}>
+                  <img
+                    width={720}
+                    height={360}
+                    src={post.data.heroImage}
+                    alt=""
+                  />
+                  <h4 class="title">{post.data.title}</h4>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            ))
           }
         </ul>
       </section>
