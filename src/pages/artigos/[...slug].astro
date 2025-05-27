@@ -2,6 +2,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import { render } from "astro:content";
+import TableOfContents from "../../components/TableOfContents.astro";
+import { extractTocFromMDX } from "../../utils/tocFromMDX";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -14,8 +16,13 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+const mdxContent = post.body!;
+const toc = await extractTocFromMDX(mdxContent);
+console.log("toc :>> ", toc);
 ---
 
 <BlogPost {...post.data}>
+  {toc.length > 0 && <TableOfContents {toc} />}
   <Content />
 </BlogPost>
