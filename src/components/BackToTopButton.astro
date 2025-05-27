@@ -2,7 +2,7 @@
 
 <script>
   // Back to top
-  const amountScrolled = 200;
+  const amountScrolled = window.innerHeight * 2;
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > amountScrolled) {
@@ -16,10 +16,13 @@
     .querySelector("button.back-to-top")
     ?.addEventListener("click", function (e) {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      const target =
+        document.querySelector("nav#toc") || document.querySelector("h2#tldr");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
 </script>
 
