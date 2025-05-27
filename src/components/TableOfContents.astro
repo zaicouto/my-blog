@@ -1,17 +1,16 @@
 ---
-// Props: links (array de objetos com { link: string, descricao: string })
 export interface Props {
-  links: { link: string; descricao: string }[];
+  toc: { link: string; descricao: string }[];
 }
 
-const { links } = Astro.props;
+const { toc } = Astro.props;
 ---
 
-<nav class="toc">
+<nav class="toc" id="toc">
   <h2 class="toc-title">SUMÁRIO</h2>
   <ul class="toc-list">
     {
-      links.map((item, index) => (
+      toc.map((item, index) => (
         <li class="toc-item">
           <a href={item.link} class="toc-link">
             {`${index + 1}. ${item.descricao}`}
